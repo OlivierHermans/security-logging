@@ -1,4 +1,4 @@
-package be.olivierhermans.securitylogging.web.endpoint.exception;
+package be.olivierhermans.securitylogging.web.exception;
 
 import be.olivierhermans.securitylogging.domain.model.exception.NoEntityFoundException;
 import org.springframework.http.ResponseEntity;

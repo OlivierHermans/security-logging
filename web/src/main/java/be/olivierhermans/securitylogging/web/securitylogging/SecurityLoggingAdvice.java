@@ -1,6 +1,7 @@
 package be.olivierhermans.securitylogging.web.securitylogging;
 
 import be.olivierhermans.securitylogging.web.Action;
+import be.olivierhermans.securitylogging.web.IdProvider;
 import org.apache.commons.lang3.tuple.Pair;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -38,7 +39,7 @@ public class SecurityLoggingAdvice {
             SecurityLogEntry entry = SecurityLogEntry.builder()
                     .action(getAction(joinPoint))
                     .path(getPath(joinPoint))
-                    .result(result)
+                    .result(result instanceof IdProvider ? ((IdProvider) result).provideId() : result)
                     .build();
             System.out.println(entry);
         }

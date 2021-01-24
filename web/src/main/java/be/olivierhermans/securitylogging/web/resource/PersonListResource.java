@@ -6,20 +6,19 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Value;
 
-import java.time.LocalDate;
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
 
 @Value
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public final class PersonResource implements IdProvider {
+public class PersonListResource implements IdProvider {
 
-    private final String ssn;
-    private final String firstName;
-    private final String lastName;
-    private final LocalDate dateOfBirth;
+    private final List<PersonResource> people;
 
     @Override
     public Object provideId() {
-        return ssn;
+        return people.stream().map(PersonResource::provideId).collect(toList());
     }
 }

@@ -1,4 +1,4 @@
-package be.olivierhermans.securitylogging.web.resource.mapper;
+package be.olivierhermans.securitylogging.web.mapper;
 
 import be.olivierhermans.securitylogging.web.resource.PersonResource;
 import be.olivierhermans.securitylogging.domain.model.Person;

@@ -4,7 +4,7 @@ import be.olivierhermans.securitylogging.domain.model.exception.NoEntityFoundExc
 import be.olivierhermans.securitylogging.domain.service.PersonService;
 import be.olivierhermans.securitylogging.web.Action;
 import be.olivierhermans.securitylogging.web.resource.PersonResource;
-import be.olivierhermans.securitylogging.web.resource.mapper.PersonResourceMapper;
+import be.olivierhermans.securitylogging.web.mapper.PersonResourceMapper;
 import be.olivierhermans.securitylogging.web.securitylogging.SecurityLoggable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
