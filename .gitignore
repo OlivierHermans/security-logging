@@ -1,5 +1,7 @@
 */target/*
 
+deployment/
+
 # Compiled class file
 *.class
 
