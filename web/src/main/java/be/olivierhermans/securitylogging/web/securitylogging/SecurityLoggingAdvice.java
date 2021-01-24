@@ -15,6 +15,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -37,6 +38,7 @@ public class SecurityLoggingAdvice {
             throw t;
         } finally {
             SecurityLogEntry entry = SecurityLogEntry.builder()
+                    .timestamp(LocalDateTime.now())
                     .action(getAction(joinPoint))
                     .path(getPath(joinPoint))
                     .result(result instanceof IdProvider ? ((IdProvider) result).provideId() : result)
